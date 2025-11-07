@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/task.css">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+	<!--  -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+	<!-- <script>hljs.highlightAll();</script> -->
+
+	<!--  -->
+	<title>ДЗ №8. Успадкування. SOLID</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header" id="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img src="img/ts-logo.jpg" alt="логотип компанії TypeScript" class="header__img">
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__task task">
+				<div class="task__container">
+					<h1 class="task__title">
+						Урок №8. Успадкування. SOLID
+					</h1>
+					<ul class="task__list list">
+						<li class="list__item" data-task="task_1">
+							<p class="list__title"><strong>Задача 1.</strong>Клас і завантажує, і стискає, і логує дії.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- interfaces -->
+									<button data-file="interfaces/ICompressor.ts">ICompressor.ts</button>
+									<button data-file="interfaces/ILogger.ts">ILogger.ts</button>
+									<button data-file="interfaces/IUploader.ts">IUploader.ts</button>
+									<!--services  -->
+									<button data-file="services/Compressor.ts">Compressor.ts</button>
+									<button data-file="services/Logger.ts">Logger.ts</button>
+									<button data-file="services/ServerUploader.ts">ServerUploader.ts</button>
+									<!-- ImageUploader -->
+									<button data-file="ImageUploader.ts">ImageUploader.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_2">
+							<p class="list__title"><strong>Задача 2.</strong>Клас ChartRenderer створює різні типи графіків:
+								лінійний, стовпчиковий, круговий.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- chart-strategies -->
+									<button data-file="chart-strategies/BarChart.ts">BarChart.ts</button>
+									<button data-file="chart-strategies/LineChart.ts">LineChart.ts</button>
+									<button data-file="chart-strategies/PieChart.ts">PieChart.ts</button>
+									<!--IChartStrategy  -->
+									<button data-file="IChartStrategy.ts">IChartStrategy.ts</button>
+									<!-- ChartRenderer -->
+									<button data-file="ChartRenderer.ts">ChartRenderer.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_3">
+							<p class="list__title"><strong>Задача 3.</strong>Сенсори у системі моніторингу (з можливістю вмикати/вимикати)
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- interfaces -->
+									<button data-file="interfaces/ISensorReadable.ts">ISensorReadable.ts</button>
+									<button data-file="interfaces/IStateReadable.ts">IStateReadable.ts</button>
+									<button data-file="interfaces/ISwitchable.ts">ISwitchable.ts</button>
+									<!--Sensor  -->
+									<button data-file="Sensor.ts">Sensor.ts</button>
+									<!-- SensorValueLogger -->
+									<button data-file="SensorValueLogger.ts">SensorValueLogger.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_4">
+							<p class="list__title"><strong>Задача 4.</strong>Банківські операції
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- interfaces -->
+									<button data-file="interfaces/IDepositService.ts">IDepositService.ts</button>
+									<button data-file="interfaces/ILoanService.ts">ILoanService.ts</button>
+									<button data-file="interfaces/ITransferService.ts">ITransferService.ts</button>
+									<button data-file="interfaces/IWithdrawService.ts">IWithdrawService.ts</button>
+									<!--accounts  -->
+									<button data-file="accounts/CheckingAccount.ts">CheckingAccount.ts</button>
+									<button data-file="accounts/LoanAccount.ts">LoanAccount.ts</button>
+									<button data-file="accounts/SavingsAccount.ts">SavingsAccount.ts</button>
+									<!-- BankAccountAbstract -->
+									<button data-file="BankAccountAbstract.ts">BankAccountAbstract.ts</button>
+									<pre><code class="language-typescript code-tabs__block"></code></pre>
+								</div>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_5">
+							<p class="list__title"><strong>Задача 5.</strong>Рендеринг сторінок
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- renderers -->
+									<button data-file="renderers/HTMLTemplaeRenderer.ts">HTMLTemplaeRenderer.ts</button>
+									<button data-file="renderers/MarkdownRenderer.ts">MarkdownRenderer.ts</button>
+									<button data-file="renderers/PDFRenderer.ts">PDFRenderer.ts</button>
+									<!--IRenderer  -->
+									<button data-file="IRenderer.ts">IRenderer.ts</button>
+									<!-- PageRenderer -->
+									<button data-file="PageRenderer.ts">PageRenderer.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task=".">
+							<p class="list__title"><strong>Вивід</strong></p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<button data-file="lesson8.ts">lesson8.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+					</ul>
+					<script type="module" src="./javascript/lesson8.js"></script>
+					<script src="./javascript/taskViewer.js"></script>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<a class="footer__link" href="https://www.typescriptlang.org/">TypeScript</a>
+			<a class="footer__link" href="../index.html">На головну сторінку</a>
+		</footer>
+	</div>
+
+</body>
+
+</html>
