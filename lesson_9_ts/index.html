@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/task.css">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+	<!--  -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+	<!-- <script>hljs.highlightAll();</script> -->
+
+	<!--  -->
+	<title>Урок №9. Generics</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header" id="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img src="img/ts-logo.jpg" alt="логотип компанії TypeScript" class="header__img">
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__task task">
+				<div class="task__container">
+					<h1 class="task__title">
+						Урок №9. Generics
+					</h1>
+					<ul class="task__list list">
+						<li class="list__item" data-task="task_1">
+							<p class="list__title"><strong>Задача 1.</strong>Функція getRandom&lt;T&gt;, яка приймає масив
+								будь-якого
+								типу та повертає випадковий елемент з нього.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- types -->
+									<button data-file="types/types.ts">types.ts</button>
+									<!--getRandom  -->
+									<button data-file="getRandom.ts">getRandom.ts</button>
+									<!-- logDatasetValues-->
+									<button data-file="logDatasetValues.ts">logDatasetValues.ts</button>
+									<!-- logType-->
+									<button data-file="logType.ts">logType.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_2">
+							<p class="list__title"><strong>Задача 2.</strong>Клас OperationManager&lt;T&gt;, який зберігає
+								список
+								операцій будь-якого типу і має метод executeAll(callback: (item: T) =>
+								void) для виконання їх усіх.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- OperstionsList -->
+									<button data-file="OperstionsList.ts">OperstionsList.ts</button>
+									<!--OperationManager  -->
+									<button data-file="OperationManager.ts">OperationManager.ts</button>
+									<!-- OperationLogger -->
+									<button data-file="OperationLogger.ts">OperationLogger.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_3">
+							<p class="list__title"><strong>Задача 3.</strong>Інтерфейс для перетворювача. Створи інтерфейс
+								Transformer&lt;T, U&gt; з методом transform(value: T): U. Реалізуй кілька
+								прикладів трансформацій: — рядок у число, — число у рядок, — об’єкт у JSON.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- types -->
+									<button data-file="types.ts">types.ts</button>
+									<!--ITransformer-->
+									<button data-file="ITransformer.ts">ITransformer.ts</button>
+									<!--errorHandlers-->
+									<button data-file="errorHandlers.ts">errorHandlers.ts</button>
+									<!-- examples -->
+									<button data-file="examples/demoTransformers.ts">demoTransformers.ts</button>
+									<button data-file="examples/runAllTransformations.ts">runAllTransformations.ts</button>
+									<!--processing -->
+									<button data-file="processing/LogTransformedValues.ts">LogTransformedValues.ts</button>
+									<button data-file="processing/processDatasets.ts">processDatasets.ts</button>
+									<!-- transformation -->
+									<button
+										data-file="transformation/NumberToStringTransformer.ts">NumberToStringTransformer.ts</button>
+									<button
+										data-file="transformation/StringToNumberTransformer.ts">StringToNumberTransformer.ts</button>
+									<button
+										data-file="transformation/ObjectToJSONTransformer.ts">ObjectToJSONTransformer.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_4">
+							<p class="list__title"><strong>Задача 4.</strong>Обмеження для типів, що реалізують інтерфейс.
+								Створи інтерфейс Printable з методом print(): void. Опиши узагальнену
+								функцію printAll &lt;T extends Printable&gt;(items: T[]), яка викликає метод print() для кожного
+								елемента масиву.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- examples -->
+									<button data-file="examples/Product.ts">Product.ts</button>
+									<button data-file="examples/User.ts">User.ts</button>
+									<!--IPrintable -->
+									<button data-file="IPrintable.ts">IPrintable.ts</button>
+									<!-- printAll-->
+									<button data-file="printAll.ts">printAll.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_5">
+							<p class="list__title"><strong>Задача 5.</strong>Ролі користувачів і їхні дозволи. Опиши тип Roles
+								= "admin" | "editor" | "viewer". Створи тип RolePermissions = Record
+								&lt;Roles, string[]&gt;, де кожен ключ містить список дій, які дозволені ролі.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- types -->
+									<button data-file="types/types.ts">types.ts</button>
+									<!-- getActionsFor -->
+									<button data-file="getActionsFor.ts">getActionsFor.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task=".">
+							<p class="list__title"><strong>Вивід</strong></p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- isValidArray -->
+									<button data-file="isValidArray.ts">isValidArray.ts</button>
+									<!-- lesson9 -->
+									<button data-file="lesson9.ts">lesson9.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+					</ul>
+					<script type="module" src="./javascript/lesson9.js"></script>
+					<script src="./javascript/taskViewer.js"></script>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<a class="footer__link" href="https://www.typescriptlang.org/">TypeScript</a>
+			<a class="footer__link" href="../index.html">На головну сторінку</a>
+		</footer>
+	</div>
+
+</body>
+
+</html>
