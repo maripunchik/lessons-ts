@@ -1,0 +1,9 @@
+ {
+ "entryPoints": ["src"],
+ "out": "docs",
+ "includeVersion": true,
+ "excludePrivate": true,
+ "excludeProtected": false,
+ "excludeExternals": true,
+ "entryPointStrategy": "expand"
+ }
