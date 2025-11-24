@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/task.css">
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">
+
+	<!--  -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/typescript.min.js"></script>
+	<!-- <script>hljs.highlightAll();</script> -->
+
+	<!--  -->
+	<title>Урок №11. Шаблони</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header" id="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img src="img/ts-logo.jpg" alt="логотип компанії TypeScript" class="header__img">
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__task task">
+				<div class="task__container">
+					<h1 class="task__title">
+						Урок №11. Шаблони
+					</h1>
+					<ul class="task__list list">
+						<li class="list__item" data-task="task_1">
+							<p class="list__title"><strong>Задача 1.(singltone)</strong>Глобальний стан гри. Розроби клас GameManager,
+								який зберігає поточний рівень, кількість очок, життя гравця тощо. Використай Singleton, щоб цей
+								стан був спільним для всієї гри.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- types -->
+									<button data-file="types.ts">types.ts</button>
+									<!--ISettings -->
+									<button data-file="ISettings.ts">ISettings.ts</button>
+									<!-- GameManager-->
+									<button data-file="GameManager.ts">GameManager.ts</button>
+									<!-- GameDebugger-->
+									<button data-file="GameDebugger.ts">GameDebugger.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_2">
+							<p class="list__title"><strong>Задача 2.(Factory Method)</strong>Система генерації завдань для навчальної
+								платформи. Створи абстрактний клас TaskFactory з методом createTask(). Реалізуй конкретні
+								фабрики для створення різних типів
+								завдань:
+								MathTaskFactory → генерує арифметичні задачі,
+								StringTaskFactory → задачі на обробку рядків,
+								OOPTaskFactory → задачі на класи й спадкування. Кожна фабрика повинна повертати об’єкт з описом
+								завдання та методом
+								execute().
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- TaskFactories -->
+									<button data-file="TaskFactories/MathTaskFactory.ts">MathTaskFactory.ts</button>
+									<button data-file="TaskFactories/StringTaskFactory.ts">StringTaskFactory.ts</button>
+									<button data-file="TaskFactories/OOPTaskFactory.ts">OOPTaskFactory.ts</button>
+									<!--tasks  -->
+									<button data-file="tasks/ITask.ts">ITask.ts</button>
+									<button data-file="tasks/MathTask.ts">MathTask.ts</button>
+									<button data-file="tasks/StringTask.ts">StringTask.ts</button>
+									<button data-file="tasks/OOPTask.ts">OOPTask.ts</button>
+									<!-- TaskFactory -->
+									<button data-file="TaskFactory.ts">TaskFactory.ts</button>
+									<!-- getRandomNumber -->
+									<button data-file="getRandomNumber.ts">getRandomNumber.ts</button>
+									<!-- runTask -->
+									<button data-file="runTask.ts">runTask.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_3">
+							<p class="list__title"><strong>Задача 3.(Abstract Factory)</strong>Інтерфейси навчальної платформи (веб / мобільна /
+								десктопна)
+								Завдання: Створи LearningUIFactory, яка створює:
+								LessonView,
+								QuizComponent,
+								ProgressTracker.
+								Реалізуй фабрики:
+								WebLearningUIFactory,
+								MobileLearningUIFactory,
+								DesktopLearningUIFactory.
+								Мета: моделювання кросплатформного інтерфейсу, де для кожної платформи створюються свої
+								реалізації компонентів.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- components/AbsractInterfacesProducts -->
+									<button
+										data-file="components/AbsractInterfacesProducts/ILessonView.ts">ILessonView.ts</button>
+									<button
+										data-file="components/AbsractInterfacesProducts/IQuizComponent.ts">IQuizComponent.ts</button>
+									<button
+										data-file="components/AbsractInterfacesProducts/IProgressTracker.ts">IProgressTracker.ts</button>
+
+									<!-- components/desktop -->
+									<button data-file="components/desktop/DesktopLessonView.ts">DesktopLessonView.ts</button>
+									<button
+										data-file="components/desktop/DesktopQuizComponent.ts">DesktopQuizComponent.ts</button>
+									<button
+										data-file="components/desktop/DesktopProgressTracker.ts">DesktopProgressTracker.ts</button>
+
+									<!-- components/mobile -->
+									<button data-file="components/mobile/MobileLessonView.ts">MobileLessonView.ts</button>
+									<button data-file="components/mobile/MobileQuizComponent.ts">MobileQuizComponent.ts</button>
+									<button
+										data-file="components/mobile/MobileProgressTracker.ts">MobileProgressTracker.ts</button>
+
+									<!-- components/web -->
+									<button data-file="components/web/WebLessonView.ts">WebLessonView.ts</button>
+									<button data-file="components/web/WebQuizComponent.ts">WebQuizComponent.ts</button>
+									<button data-file="components/web/WebProgressTracker.ts">WebProgressTracker.ts</button>
+
+									<!-- factories -->
+									<button data-file="factories/ILearningUIFactory.ts">ILearningUIFactory.ts</button>
+									<button
+										data-file="factories/DesktopLearningUIFactory.ts">DesktopLearningUIFactory.ts</button>
+									<button data-file="factories/MobileLearningUIFactory.ts">MobileLearningUIFactory.ts</button>
+									<button data-file="factories/WebLearningUIFactory.ts">WebLearningUIFactory.ts</button>
+									<!-- renderPlatformUI -->
+									<button data-file="renderPlatformUI.ts">renderPlatformUI.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_4">
+							<p class="list__title"><strong>Задача 4.(Builder)</strong>Конструктор складного запиту до бази даних
+								(QueryBuilder). Створи QueryBuilder, який дозволяє покроково формувати SQL-запит (SELECT, WHERE,
+								ORDER BY, LIMIT). Мета - навчитися
+								будувати складні текстові конструкції без використання довгих конкатенацій або умовних
+								операторів.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- IQuery -->
+									<button data-file="IQuery.ts">IQuery.ts</button>
+									<!-- types -->
+									<button data-file="types.ts">types.ts</button>
+									<!--Query -->
+									<button data-file="Query.ts">Query.ts</button>
+									<!-- QueryBuilder-->
+									<button data-file="QueryBuilder.ts">QueryBuilder.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_5">
+							<p class="list__title"><strong>Задача 5.(Prototype)</strong>Клонування об’єктів графічного редактора.
+								Завдання: Реалізуй базовий інтерфейс Shape із методом clone(). Створи класи Circle, Rectangle,
+								Line, які реалізують
+								цей інтерфейс. Додай масив shapes, у якому можна копіювати будь-яку фігуру, не знаючи її типу.
+								Мета - продемонструвати
+								поліформне копіювання (глибоке клонування різних об’єктів через спільний інтерфейс).
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- IShape -->
+									<button data-file="IShape.ts">IShape.ts</button>
+									<!-- shapes -->
+									<button data-file="shapes/Circle.ts">Circle.ts</button>
+									<button data-file="shapes/Line.ts">Line.ts</button>
+									<button data-file="shapes/Rectangle.ts">Rectangle.ts</button>
+									<!-- duplicateShapes -->
+									<button data-file="duplicateShapes.ts">duplicateShapes.ts</button>
+
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_6">
+							<p class="list__title"><strong>Задача 6.(Adapter)</strong>Інтеграція старого і нового API логування. Є
+								старий клас LegacyLogger із методом writeLog(message), і новий інтерфейс Logger із методом
+								log(message, level).
+								Завдання - створити адаптер LegacyLoggerAdapter, який дозволить використовувати старий логер у
+								новій системі без зміни
+								його коду.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- ILogger -->
+									<button data-file="ILogger.ts">ILogger.ts</button>
+									<!-- types -->
+									<button data-file="types.ts">types.ts</button>
+									<!--LegacyLogger -->
+									<button data-file="LegacyLogger.ts">LegacyLogger.ts</button>
+									<!-- LegacyLoggerAdapter-->
+									<button data-file="LegacyLoggerAdapter.ts">LegacyLoggerAdapter.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_7">
+							<p class="list__title"><strong>Задача 7.(Facade)</strong>Фасад для навчальної системи тестування
+								Є підсистеми:
+								QuestionBank - зберігає питання,
+								Timer - відліковує час,
+								ResultEvaluator - перевіряє відповіді,
+								ReportGenerator - формує звіт. Створи ExamFacade, який має методи startExam(), submitAnswer(),
+								finishExam(), що
+								координують роботу всіх підсистем.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- subsystems -->
+									<button data-file="subsystems/QuestionBank.ts">QuestionBank.ts</button>
+									<button data-file="subsystems/Timer.ts">Timer.ts</button>
+									<button data-file="subsystems/ResultEvaluator.ts">ResultEvaluator.ts</button>
+									<button data-file="subsystems/ReportGenerator.ts">ReportGenerator.ts</button>
+
+									<!-- ExamFacade -->
+									<button data-file="ExamFacade.ts">ExamFacade.ts</button>
+									<!--runExamSession -->
+									<button data-file="runExamSession.ts">runExamSession.ts</button>
+
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_8">
+							<p class="list__title"><strong>Задача 8.(Decorator)</strong>Розширення HTTP-запитів (декоратори запитів у
+								веб-додатку)
+								Є базовий клас HttpRequest, який виконує запит методом send(). Необхідно створити декоратори,
+								які можуть:
+								додавати JWT-токен (AuthDecorator),
+								кешувати відповіді (CacheDecorator),
+								логувати запити (LoggerDecorator). Мета - навчитися динамічно додавати поведінку до запитів без
+								зміни базового коду
+								API-клієнта.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- base -->
+									<button data-file="base/IHttpRequest.ts">IHttpRequest.ts</button>
+									<button data-file="base/HttpRequest.ts">HttpRequest.ts</button>
+
+									<!-- decorators -->
+									<button data-file="decorators/AuthDecorator.ts">AuthDecorator.ts</button>
+									<button data-file="decorators/CacheDecorator.ts">CacheDecorator.ts</button>
+									<button data-file="decorators/LoggerDecorator.ts">LoggerDecorator.ts</button>
+
+									<!--executeRequestChain -->
+									<button data-file="executeRequestChain.ts">executeRequestChain.ts</button>
+
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_9">
+							<p class="list__title"><strong>Задача 9.(Composite)</strong>Файлова система (папки й файли)
+								Завдання: Реалізуй класи File і Directory, що реалізують спільний інтерфейс FileSystemItem.
+								Кожен елемент має методи
+								getSize() і show(). Для Directory метод getSize() має обчислювати сумарний розмір усіх вкладених
+								файлів і папок.
+								Мета: відтворити класичний реальний приклад Composite у контексті файлових структур.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- IFileSystemItem -->
+									<button data-file="IFileSystemItem.ts">IFileSystemItem.ts</button>
+									<!-- File -->
+									<button data-file="File.ts">File.ts</button>
+									<!--Directory -->
+									<button data-file="Directory.ts">Directory.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="task_10">
+							<p class="list__title"><strong>Задача 10.(Proxy)</strong>Ліниве завантаження (Virtual Proxy)
+								Завдання: Створи клас Image з методом display(), який показує зображення. Додай ImageProxy, який
+								відкладає
+								завантаження “важкого” файлу до моменту, коли користувач реально викликає display().
+								Мета: навчитися реалізовувати lazy loading великих ресурсів через проксі.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- IImage -->
+									<button data-file="IImage.ts">IImage.ts</button>
+									<!-- Image -->
+									<button data-file="Image.ts">Image.ts</button>
+									<!-- ImageProxy -->
+									<button data-file="ImageProxy.ts">ImageProxy.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task=".">
+							<p class="list__title"><strong>Вивід</strong></p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- lesson11 -->
+									<button data-file="lesson11.ts">lesson11.ts</button>
+								</div>
+								<pre><code class="language-typescript code-tabs__block"></code></pre>
+							</div>
+						</li>
+					</ul>
+					<script type="module" src="./javascript/lesson11.js"></script>
+					<script src="./javascript/taskViewer.js"></script>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<a class="footer__link" href="https://www.typescriptlang.org/">TypeScript</a>
+			<a class="footer__link" href="../index.html">На головну сторінку</a>
+		</footer>
+	</div>
+
+</body>
+
+</html>
