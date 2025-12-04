@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="icon" href="./favicon.ico" type="image/x-icon">
+
+	<title>lesson-12</title>
+  <script type="module" crossorigin src="./assets/index-DfV4EZIL.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/index-gLQFsZt0.css">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header" id="header">
+			<div class="header__container">
+				<div class="header__logo">
+					<img src="./assets/ts-logo-_Y61IbWA.jpg" alt="логотип компанії TypeScript" class="header__img">
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="page__task task">
+				<div class="task__container">
+					<h1 class="task__title">
+						Урок №12. Шаблони
+					</h1>
+					<ul class="task__list list">
+						<li class="list__item" data-task="Strategy">
+							<p class="list__title"><strong>Задача 1.(Strategy) Обробка платежів різними способами</strong>Опиши
+								базовий
+								інтерфейс PaymentStrategy з методом pay(amount: number). Створи реалізації для різних варіантів
+								оплати:
+								CreditCardPayment, PayPalPayment, CryptoPayment. Контекст PaymentProcessor має використовувати
+								будь-яку стратегію
+								залежно від вибору користувача.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- strategies -->
+									<button data-file-name="strategies/CreditCardPayment.ts">CreditCardPayment.ts</button>
+									<button data-file-name="strategies/CryptoPayment.ts">CryptoPayment.ts</button>
+									<button data-file-name="strategies/PayPalPayment.ts">PayPalPayment.ts</button>
+									<!--IPaymentStrategy -->
+									<button data-file-name="IPaymentStrategy.ts">IPaymentStrategy.ts</button>
+									<!-- PaymentProcessor-->
+									<button data-file-name="PaymentProcessor.ts">PaymentProcessor.ts</button>
+								</div>
+								<pre></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="observer">
+							<p class="list__title"><strong>Задача 2. (Observer(Pub-Sub)) Сповіщення про зміни на рахунку в
+									банку</strong>Створи клас
+								BankAccount, який повідомляє підписані сервіси (SMSNotifier, EmailNotifier, Logger) про зміну
+								балансу. Мета
+								- продемонструвати, як одна подія може запускати кілька незалежних дій (надсилання SMS, e-mail,
+								логування).
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- services -->
+									<button data-file-name="services/EmailNotifier.ts">EmailNotifier.ts</button>
+									<button data-file-name="services/SMSNotifier.ts">SMSNotifier.ts</button>
+									<button data-file-name="services/Logger.ts">Logger.ts</button>
+									<!--type  -->
+									<button data-file-name="type.ts">type.ts</button>
+									<!-- IWatchable -->
+									<button data-file-name="IWatchable.ts">IWatchable.ts</button>
+									<!-- BankAccount -->
+									<button data-file-name="BankAccount.ts">BankAccount.ts</button>
+								</div>
+								<pre></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="State">
+							<p class="list__title"><strong>Задача 3. (State) Стан світлофора (Traffic Light)</strong>Завдання:
+								Реалізуй
+								клас TrafficLight, який циклічно переходить між станами: Red, Yellow, Green. Кожен стан має
+								метод next(), який змінює поточний стан, і signal(), який виводить колір світла. Можна додати
+								метод
+								autoCycle() для демонстрації повного циклу.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- IColorChangeState -->
+									<button data-file-name="IColorChangeState.ts">IColorChangeState.ts</button>
+
+									<!-- RedState -->
+									<button data-file-name="RedState.ts">RedState.ts</button>
+
+									<!-- YellowState -->
+									<button data-file-name="YellowState.ts">YellowState.ts</button>
+
+									<!-- GreenState -->
+									<button data-file-name="GreenState.ts">GreenState.ts</button>
+
+									<!-- TrafficLight -->
+									<button data-file-name="TrafficLight.ts">TrafficLight.ts</button>
+
+								</div>
+								<pre></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="Command">
+							<p class="list__title"><strong>Задача 4.(Command) Керування дроном або роботом</strong>Завдання:
+								Опиши
+								Command для керування рухом дрона: MoveUpCommand, MoveDownCommand, TurnLeftCommand,
+								TurnRightCommand. Клас Drone (Receiver) реалізує методи руху. Клас Controller (Invoker) зберігає
+								список виконаних команд і має метод
+								undoLast().
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- commands -->
+									<button data-file-name="commands/MoveDownCommand.ts">MoveDownCommand.ts</button>
+									<button data-file-name="commands/MoveUpCommand.ts">MoveUpCommand.ts</button>
+									<button data-file-name="commands/TurnLeftCommand.ts">TurnLeftCommand.ts</button>
+									<button data-file-name="commands/TurnRightCommand.ts">TurnRightCommand.ts</button>
+
+									<!-- ICommand -->
+									<button data-file-name="ICommand.ts">ICommand.ts</button>
+									<!--Drone -->
+									<button data-file-name="Drone.ts">Drone.ts</button>
+									<!-- Controller-->
+									<button data-file-name="Controller.ts">Controller.ts</button>
+								</div>
+								<pre></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task="Chain of Responsibility">
+							<p class="list__title"><strong>Задача 5.(Chain of Responsibility) Перевірка доступу до
+									API</strong>Завдання: Реалізуй ланцюг
+								безпеки для API-запиту:
+								TokenValidationHandler - перевіряє, чи токен існує;
+								RoleCheckHandler - перевіряє, чи користувач має потрібну роль (admin, user);
+								RateLimitHandler - перевіряє, чи не перевищено ліміт запитів.
+								Якщо всі перевірки пройдені, запит обробляє RequestProcessor.
+								Мета: моделювати middleware-ланцюг у стилі Express.js / NestJS.
+							</p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- handlers -->
+									<button
+										data-file-name="handlers/TokenValidationHandler.ts">TokenValidationHandler.ts</button>
+									<button data-file-name="handlers/RoleCheckHandler.ts">RoleCheckHandler.ts</button>
+									<button data-file-name="handlers/RateLimitHandler.ts">RateLimitHandler.ts</button>
+									<button data-file-name="handlers/BaseHandler.ts">BaseHandler.ts</button>
+
+									<!-- UserRole -->
+									<button data-file-name="types/UserRole.ts">UserRole.ts</button>
+
+									<!-- IHandler -->
+									<button data-file-name="IHandler.ts">IHandler.ts</button>
+
+									<!-- IRequest -->
+									<button data-file-name="IRequest.ts">IRequest.ts</button>
+
+									<!-- RequestProcessor -->
+									<button data-file-name="RequestProcessor.ts">RequestProcessor.ts</button>
+
+								</div>
+								<pre></pre>
+							</div>
+						</li>
+						<li class="list__item" data-task=".">
+							<p class="list__title"><strong>Вивід</strong></p>
+							<div class="code-tabs">
+								<div class="code-tabs__buttons">
+									<!-- lesson12 -->
+									<button data-file-name="main.ts">main.ts</button>
+								</div>
+								<pre></pre>
+							</div>
+						</li>
+					</ul>
+					<!-- Подяка -->
+					<div id="app"></div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<a class="footer__link" href="https://www.typescriptlang.org/">TypeScript</a>
+			<a class="footer__link" href="../../index.html">На головну сторінку</a>
+		</footer>
+	</div>
+
+
+
+</body>
+
+</html>
