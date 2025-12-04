@@ -1,0 +1,1 @@
+export type ObserverFunc=(balance:number)=>void
